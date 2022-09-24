@@ -1,5 +1,5 @@
 type TagItem = {
-	id: string;
+	id: number;
 	title: string;
 }
 

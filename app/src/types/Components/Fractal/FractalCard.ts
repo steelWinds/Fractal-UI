@@ -1,7 +1,7 @@
 import type TagItem from '../UI/Tag/TagItem';
 
 type FractalCard = {
-	id: string,
+	id: number,
 	title: string,
 	tagList: TagItem[]
 }

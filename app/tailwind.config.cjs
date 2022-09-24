@@ -9,6 +9,15 @@ module.exports = {
 		},
 
 		extend: {
+			screens: {
+				'ultra-mobile': '320px',
+				'mobile': '360px',
+				'tablet': '640px',
+				'small-laptop': '920px',
+				'laptop': '1024px',
+				'desktop': '1280px',
+			},
+
 			colors: {
 				blue: '#2E4057',
 				gold: '#DEB841',

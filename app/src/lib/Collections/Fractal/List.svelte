@@ -3,7 +3,6 @@
 	import Item from './Item.svelte';
 
 	export let cardList: FractalCard[] = [];
-	export let cols: number = 2;
 </script>
 
 <article 
@@ -11,7 +10,13 @@
 		tw-p-2.5
 		tw-gap-2.5
 		tw-space-y-2.5
-		tw-columns-${cols}
+		tw-columns-1
+		mobile:tw-columns-2
+		small-laptop:tw-space-y-0
+		small-laptop:tw-columns-[unset]
+		small-laptop:tw-grid
+		small-laptop:tw-grid-cols-4
+		desktop:tw-grid-cols-6
 	`}
 >
 	{#each cardList as card (card.id)}

@@ -1,5 +1,36 @@
 @import 'assets/fonts/ProximaNova/include.css';
+@import 'carbon-components-svelte/css/white.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-toggle {
+	& * {
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	& .bx--toggle__switch {
+		margin-top: 0;
+	}
+
+	& .bx--toggle__switch::before {
+		background-color: #2E4057;
+	}
+
+	& .bx--toggle-input:checked +
+		.bx--toggle-input__label > 
+		.bx--toggle__switch:before  {
+		background-color: #3AB795;
+	}
+
+	& .bx--toggle-input:checked +
+		.bx--toggle-input__label > 
+		.bx--toggle__switch:after  {
+		background-color: #2E4057;
+	}
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+}
