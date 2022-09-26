@@ -6,6 +6,7 @@ export { elementClass as class };
 
 <button
 	class={`tw-select-none ${elementClass}`}
+	on:click
 >
 	<slot />
 </button>

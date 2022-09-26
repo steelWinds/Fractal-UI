@@ -48,4 +48,6 @@
 	]
 </script>
 
-<List cardList={cards} />
+<div class="tw-p-3">
+	<List cardList={cards} />
+</div>

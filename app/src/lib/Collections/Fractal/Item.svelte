@@ -10,7 +10,6 @@ export { elementClass as class };
 
 <article 
 	class={`
-		fractal-card
 		tw-bg-blue
 		tw-rounded-xl
 		tw-p-3
@@ -35,9 +34,3 @@ export { elementClass as class };
 
 	<List tagList={tagList} class="tw-justify-end" />
 </article>
-
-<style lang="postcss">
-.fractal-card {
-	aspect-ratio: 5 / 4;
-}
-</style>
