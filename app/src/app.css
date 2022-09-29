@@ -1,4 +1,4 @@
-@import 'assets/fonts/ProximaNova/include.css';
+@import 'static/assets/fonts/ProximaNova/include.css';
 @import 'carbon-components-svelte/css/white.css';
 
 @tailwind base;
@@ -28,6 +28,45 @@
 		.bx--toggle-input__label > 
 		.bx--toggle__switch:after  {
 		background-color: #2E4057;
+	}
+}
+
+.link-item {
+	position: relative;
+
+	display: block;
+	inline-size: 36px;
+	aspect-ratio: 1 / 1;
+
+	user-select: none !important;
+	text-decoration: none !important;
+
+	& > img {
+		object-fit: contain;
+	}
+
+	&:after {
+		content: "";
+
+		position: absolute;
+		top: -5px;
+		left: 50%;
+
+		display: block;
+		inline-size: 50%;
+		block-size: 3px;
+		border-radius: 10rem;
+
+		background-color: #3AB795;
+
+		transform: translateX(-50%) scale(0);
+		transition: all .25s ease;
+  }
+
+	&.active {
+		&:after {
+			transform: translateX(-50%) scale(1);
+		}
 	}
 }
 

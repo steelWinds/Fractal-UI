@@ -24,6 +24,10 @@ module.exports = {
 				gold: '#DEB841',
 				white: '#FFFFFF',
 				azure: '#3AB795',
+			},
+
+			transitionDuration: {
+				'250': '250ms',
 			}
 		},
 	},

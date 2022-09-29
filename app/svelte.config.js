@@ -14,6 +14,8 @@ const config = {
 		alias: {
 			'types': 'src/types/*',
 			'assets': 'src/assets/*',
+			'static': 'static/*',
+			'@': 'src/*',
 		}
 	}
 };

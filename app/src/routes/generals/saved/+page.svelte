@@ -1,7 +1,9 @@
 <script lang="ts">
-	import List from '$lib/Collections/Fractal/List.svelte'
+import { Search } from "carbon-components-svelte";
+import List from '$lib/Collections/Fractal/List.svelte'
 
-	const cards = [
+const cards = [
+
 		{
 			id: 1,
 			title: 'Line',
@@ -49,5 +51,20 @@
 </script>
 
 <div class="tw-p-3">
+	<h3
+		class="
+			tw-text-3xl
+			tw-font-semibold
+			tw-text-center
+			tw-mb-6
+			tw-font-ProximaNova
+		">
+		Saved
+	</h3>
+
+	<div class="tw-mb-4">
+		<Search />
+	</div>
+
 	<List cardList={cards} />
 </div>
