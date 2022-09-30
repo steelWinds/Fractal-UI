@@ -1,6 +1,7 @@
 <script lang="ts">
 	import MenuPanel from '$lib/UI/MenuPanel.svelte';
 	import LinkItem from '$lib/UI/LinkItem.svelte';
+  import Button from '$lib/UI/Button.svelte';
 </script>
 
 <main>
@@ -11,28 +12,28 @@
 			<img src="/assets/icons/Sign_out_circle.svg" alt="Out link"> 
 		</LinkItem>
 
-		<LinkItem class="link-item" link="/creator">
+		<Button class="link-item">
 			<img src="/assets/icons/Video_fill.svg" alt="Play button"> 
-		</LinkItem>
+		</Button>
 		
-		<LinkItem class="link-item" link="/saved">
+		<Button class="link-item">
 			<img src="/assets/icons/Stop_fill.svg" alt="Pause button"> 
-		</LinkItem>
+		</Button>
 		
-		<LinkItem class="link-item" link="/settings">
+		<Button class="link-item">
 			<img src="/assets/icons/Refresh.svg" alt="Refresh button"> 
-		</LinkItem>
+		</Button>
 
-		<LinkItem class="link-item" link="/creator">
+		<Button class="link-item">
 			<img src="/assets/icons/Filter.svg" alt="Settings modal button"> 
-		</LinkItem>
+		</Button>
 		
-		<LinkItem class="link-item" link="/saved">
+		<Button class="link-item">
 			<img src="/assets/icons/Chart_fill.svg" alt="Stats widget button"> 
-		</LinkItem>
+		</Button>
 		
-		<LinkItem class="link-item" link="/settings">
+		<Button class="link-item">
 			<img src="/assets/icons/File_dock_add_fill.svg" alt="Save fractal button"> 
-		</LinkItem>
+		</Button>
 	</MenuPanel>
 </main>

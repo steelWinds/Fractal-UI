@@ -70,6 +70,15 @@
 	}
 }
 
+.menu-panel {
+	box-shadow: 0 0 15px 0 rgba(0 0 0 / 30%);
+
+	& > * {
+		flex-shrink: 0;
+		scroll-snap-align: center;
+	}
+}
+
 a, button {
 	-webkit-tap-highlight-color: transparent;
 }

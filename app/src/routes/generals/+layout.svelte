@@ -6,7 +6,7 @@
 <main>
 	<slot />
 
-	<MenuPanel class="tw-fixed tw-flex tw-space-x-3">
+	<MenuPanel>
 		<LinkItem class="link-item" link="/generals/gallary">
 			<img src="/assets/icons/Img_box_fill.svg" alt="Gallary-page" />
 		</LinkItem>
