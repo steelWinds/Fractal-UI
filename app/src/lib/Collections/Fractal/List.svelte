@@ -116,6 +116,8 @@
 		{#if !pendingState}
 			{#each cardList as card (card.id)}
 				<Item
+					link={card.slug}
+					baseURL="/custom/fractals/"
 					tagList={card.tagList} 
 					class={`tw-break-inside-avoid ${aspectRatioItem}`}
 				>

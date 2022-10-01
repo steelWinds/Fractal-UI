@@ -7,6 +7,7 @@ const cards = [
 		{
 			id: 1,
 			title: 'Line',
+			slug: 'Pizda',
 			tagList: [
 				{
 					id: 2,

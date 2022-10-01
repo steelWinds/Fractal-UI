@@ -5,11 +5,14 @@ import List from '$lib/UI/Tag/List.svelte';
 let elementClass: string = '';
 
 export let tagList: TagItem[] = [];
+export let link: string = ''
+export let baseURL: string = '';
 export { elementClass as class };
 </script>
 
 <article 
 	class={`
+		tw-relative
 		tw-bg-blue
 		tw-rounded-xl
 		tw-p-3
@@ -19,6 +22,11 @@ export { elementClass as class };
 		${elementClass}
 	`}
 >
+	{#if Boolean(link && baseURL)}
+		<!-- svelte-ignore a11y-missing-content -->
+		<a href={`${baseURL}${link}`} class="tw-absolute tw-w-full tw-h-full"></a>
+	{/if}
+
 	<h3 
 		class="
 			title

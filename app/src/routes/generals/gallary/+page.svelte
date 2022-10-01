@@ -6,6 +6,7 @@
 		{
 			id: 1,
 			title: 'Line',
+			slug: 'jopa',
 			tagList: [
 				{
 					id: 2,
