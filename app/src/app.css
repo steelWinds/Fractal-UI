@@ -1,5 +1,7 @@
 @import 'static/assets/fonts/ProximaNova/include.css';
 @import 'carbon-components-svelte/css/white.css';
+@import 'swiper/css';
+@import 'swiper/css/navigation';
 
 @tailwind base;
 @tailwind components;
@@ -75,6 +77,10 @@
 }
 
 .menu-panel {
+	@media (width > 640px) {
+		box-shadow: 0 0 15px 0 rgba(0 0 0 / .3);
+	}
+
 	& > * {
 		flex-shrink: 0;
 		scroll-snap-align: center;
@@ -84,3 +90,105 @@
 a, button {
 	-webkit-tap-highlight-color: transparent;
 }
+
+.custom-select {
+	& .bx--multi-select {
+		background-color: #2E4057;
+		border-radius: 0.25rem; 
+	}
+
+	& .bx--list-box__label {
+		color: #9ca3af;
+	}
+
+	& .bx--list-box__menu-icon > svg {
+		fill: #FFFFFF;
+	}
+
+	& .bx--list-box__menu-icon {
+		right: 2.5rem;
+	}
+
+	& .bx--list-box__field {
+		padding: 0 3rem 0 .5rem;
+	}
+
+	& .bx--list-box__field:focus {
+		outline-color: #3AB795;
+	}
+}
+
+.bx--tooltip__trigger:not(.bx--btn--icon-only):focus {
+	outline-color: #3AB795;
+}
+
+.custom-slider {
+	& .bx--text-input.bx--slider-text-input {
+		border-radius: 4px;
+		border: 1px solid #2E4057;
+		background-color: #FFFFFF;
+	}
+
+	& .bx--text-input:focus,
+	& .bx--text-input:active {
+		outline-color: #3AB795;
+	}
+
+	& .bx--slider__thumb, & .bx--slider__filled-track {
+		background-color: #3AB795;
+	}
+
+	& .bx--slider__track {
+		background-color: #2E4057;
+
+		&:before {
+			display: none;
+		}
+	}
+}
+
+.custom-number-input {
+	& .bx--number__controls {
+		right: 2.5rem;
+
+		& button {
+			border-color: #3AB795;
+		}
+	}
+
+	& input[type="number"] {
+		background-color: #2E4057;
+		color: #FFFFFF;
+		border: none;
+
+		&:focus {
+			outline-color: #3AB795;
+		}
+	}
+
+	& .bx--number__control-btn {
+		outline-color: #3AB795;
+
+		& svg {
+			fill: #FFFFFF;
+		}
+
+		&:after,
+		&:before {
+			background-color: transparent;
+		}
+
+		&:hover {
+			background-color: #FFFFFF;
+
+			& svg {
+				fill: #2E4057;
+			}
+		}
+	}
+
+	& .bx--number__rule-divider {
+		background-color: #FFFFFF;
+	}
+}
+

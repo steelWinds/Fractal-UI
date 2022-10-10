@@ -3,9 +3,18 @@
 	import MenuPanel from '$lib/UI/MenuPanel.svelte';
 	import LinkItem from '$lib/UI/LinkItem.svelte';
   import Button from '$lib/UI/Button.svelte';
+	import Input from '$lib/UI/Input.svelte';
 	import Modal from '@/lib/Modules/Modal.svelte';
+	import { MultiSelect } from "carbon-components-svelte";
+	import SettingsPanel from '$lib/Partials/Other/SettingsPanel.svelte';
 	import { modalStore } from '@/stores/modal-store';
 
+	let fileName: string = '';
+	let items: { id: number; text: string }[] = [
+		{ id: 0, text: 'Slack' },
+    { id: 1, text: 'Email' },
+    { id: 2, text: 'Fax' },
+	];
 </script>
 
 <div class="tw-flex tw-justify-center tw-pt-3">
@@ -48,10 +57,35 @@
 	</Button>
 </MenuPanel>
 
-<Modal class="tw-bottom-3" modalId="fractal-settings-modal">
-	Settings
+<Modal
+	class="tw-bottom-3"
+	modalId="fractal-settings-modal"
+	title="Settings"
+>
+	<SettingsPanel />
 </Modal>
 
-<Modal class="tw-bottom-3" modalId="fractal-saving-modal">
-	Fractal saving
+<Modal
+	class="tw-bottom-3"
+	modalId="fractal-saving-modal"
+	title="File save"
+>
+	<Input	
+		type="text"
+		class="tw-mb-2"
+		placeholder="File name"
+		bind:value={fileName}
+	/>
+
+	<span class="custom-select">
+		<Input slottedInput>
+			<svelte:fragment slot="input">
+				<MultiSelect
+					direction="top"
+					label="Tags"
+					{items}
+				/>
+			</svelte:fragment>
+		</Input>
+	</span>
 </Modal>

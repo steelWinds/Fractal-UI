@@ -2,18 +2,21 @@
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { modalStore } from '@/stores/modal-store';
+	import { clickOutside } from '@/actions/clickOutside';
 	import Button from '$lib/UI/Button.svelte';
-
-	let elementClass: string = '';
 
 	export { elementClass as class };
 	export let modalId: string;
+	export let title: string;
+
+	let elementClass: string = '';
 
 	modalStore.addModalId(modalId);
 </script>
 
 {#if $modalStore.get(modalId)}
 	<article
+		use:clickOutside={() => modalStore.closeModal(modalId)}
 		transition:slide={{ duration: 250, easing: cubicOut }}
 		class={`
 			tw-fixed
@@ -24,6 +27,8 @@
 			tw-z-50
 			tw-w-5/6
 			tw-bg-white
+			tw-max-w-sm
+			tw-overflow-hidden
 			${elementClass}
 		`}
 	>
@@ -40,6 +45,17 @@
 			</Button>
 
 			<div>
+				<h4
+					class="
+						tw-font-ProximaNova
+						tw-font-semibold
+						tw-text-3xl
+						tw-mb-4
+					"
+				>
+					{ title }
+				</h4>
+
 				<slot />
 			</div>
 		</div>
