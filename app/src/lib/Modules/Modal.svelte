@@ -3,6 +3,7 @@
 	import { cubicOut } from 'svelte/easing';
 	import { modalStore } from '@/stores/modal-store';
 	import { clickOutside } from '@/actions/clickOutside';
+	import { swipeElement } from '@/actions/swipeElement';
 	import Button from '$lib/UI/Button.svelte';
 
 	export { elementClass as class };
@@ -16,6 +17,7 @@
 
 {#if $modalStore.get(modalId)}
 	<article
+		use:swipeElement={{ lockAxis: 'y' }}
 		use:clickOutside={() => modalStore.closeModal(modalId)}
 		transition:slide={{ duration: 250, easing: cubicOut }}
 		class={`

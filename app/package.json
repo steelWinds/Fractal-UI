@@ -35,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"interactjs": "^1.10.17",
 		"swiper": "^8.4.3"
 	}
 }
