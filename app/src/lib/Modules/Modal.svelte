@@ -17,7 +17,12 @@
 
 {#if $modalStore.get(modalId)}
 	<article
-		use:swipeElement={{ lockAxis: 'y' }}
+		use:swipeElement={{ 
+			axis: 'y',
+			direction: 'down',
+			minElementDiv: 4,
+			callback: () => modalStore.closeModal(modalId)
+		}}
 		use:clickOutside={() => modalStore.closeModal(modalId)}
 		transition:slide={{ duration: 250, easing: cubicOut }}
 		class={`

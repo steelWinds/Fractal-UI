@@ -16,10 +16,12 @@ export const clickOutside = (
 	}
 
 	document.addEventListener('click', handler, true);
+	document.addEventListener('touchend', handler, true);
 
 	return {
 		destroy() {
 			document.removeEventListener('click', handler, true);
+			document.removeEventListener('touchend', handler, true);
 		}
 	}
 }
