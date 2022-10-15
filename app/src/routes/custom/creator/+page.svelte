@@ -4,7 +4,7 @@
 	import LinkItem from '$lib/UI/LinkItem.svelte';
   import Button from '$lib/UI/Button.svelte';
 	import Input from '$lib/UI/Input.svelte';
-	import Modal from '@/lib/Modules/Modal.svelte';
+	import Modal from '$lib/Modules/Modal.svelte';
 	import { MultiSelect } from "carbon-components-svelte";
 	import SettingsPanel from '$lib/Partials/Other/SettingsPanel.svelte';
 	import { modalStore } from '@/stores/modal-store';

@@ -9,7 +9,19 @@
 
 html,
 body {
-	cloverscroll-behavior-y: contain !important;
+	overscroll-behavior-y: contain !important;
+}
+
+a,
+button,
+input,
+label {
+	-webkit-tap-highlight-color : transparent !important;
+	user-select: none !important;
+
+	& * {
+		user-select: none !important;
+	}
 }
 
 .custom-toggle {

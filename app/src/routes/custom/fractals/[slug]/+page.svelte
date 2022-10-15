@@ -3,6 +3,10 @@
 	import MenuPanel from '$lib/UI/MenuPanel.svelte';
 	import LinkItem from '$lib/UI/LinkItem.svelte';
   import Button from '$lib/UI/Button.svelte';
+	import Input from '$lib/UI/Input.svelte';
+	import Modal from '$lib/Modules/Modal.svelte';
+	import { NumberInput } from 'carbon-components-svelte';
+	import { modalStore } from '@/stores/modal-store';
 
 	export let data: IFractalItemData; 
 </script>
@@ -37,7 +41,10 @@
 		<img src="/assets/icons/Refresh.svg" alt="Refresh button"> 
 	</Button>
 
-	<Button class="link-item">
+	<Button
+		class="link-item"
+		on:click={() => modalStore.openModal('fractal-animation-modal')}
+	>
 		<img src="/assets/icons/Chemistry.svg" alt="Animate settings"> 
 	</Button>
 	
@@ -45,3 +52,32 @@
 		<img src="/assets/icons/Chart_fill.svg" alt="Stats widget button"> 
 	</Button>
 </MenuPanel>
+
+<Modal
+	class="tw-bottom-3"
+	modalId="fractal-animation-modal"
+	title="Settings"
+>
+	<h5
+		class="
+			tw-font-ProximaNova
+			tw-font-semibold
+			tw-text-2xl
+			tw-mb-2
+		"
+	>
+		Animation
+	</h5>
+
+	<Input	
+		type="text"
+		class="tw-mb-2"
+		slottedInput
+	>
+		<svelte:fragment slot="input">
+			<span class="custom-number-input">
+				<NumberInput />
+			</span>
+		</svelte:fragment>
+	</Input>
+</Modal>
