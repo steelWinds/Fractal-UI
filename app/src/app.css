@@ -24,6 +24,10 @@ label {
 	}
 }
 
+.modal-open {
+	overflow: hidden !important;
+}
+
 .custom-toggle {
 	& * {
 		-webkit-tap-highlight-color: transparent;

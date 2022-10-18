@@ -5,23 +5,46 @@
   import Button from '$lib/UI/Button.svelte';
 	import Input from '$lib/UI/Input.svelte';
 	import Modal from '$lib/Modules/Modal.svelte';
+	import LogsCard from '$lib/Card/LogsCard.svelte';
 	import { MultiSelect } from "carbon-components-svelte";
 	import SettingsPanel from '$lib/Partials/Other/SettingsPanel.svelte';
 	import { modalStore } from '@/stores/modal-store';
 
+	let showLogs: boolean = false;
 	let fileName: string = '';
 	let items: { id: number; text: string }[] = [
 		{ id: 0, text: 'Slack' },
     { id: 1, text: 'Email' },
     { id: 2, text: 'Fax' },
 	];
+	let data = [
+		{
+			title: 'Something',
+			value: 1000,
+			unit: 'jp.'
+		},
+		{
+			title: 'Something 2',
+			value: 2000,
+			unit: 'mp.'
+		},
+		{
+			title: 'Something 3',
+			value: 3000,
+			unit: 'gp.'
+		}
+	]
 </script>
 
-<div class="tw-flex tw-justify-center tw-pt-3">
+<div class="tw-flex tw-flex-col tw-justify-center tw-items-center tw-pt-3 tw-space-y-12">
 	<FractalCreator xSizeDiff={30} canvasYSize={580} />
+
+	{#if showLogs}
+		<LogsCard {data} />
+	{/if}
 </div>
 
-<MenuPanel class="tw-fixed tw-flex tw-space-x-3">
+<MenuPanel class="tw-flex tw-space-x-3">
 	<LinkItem class="link-item" link="/">
 		<img src="/assets/icons/Sign_out_circle.svg" alt="Out link"> 
 	</LinkItem>
@@ -45,7 +68,10 @@
 		<img src="/assets/icons/Filter.svg" alt="Settings modal button"> 
 	</Button>
 	
-	<Button class="link-item">
+	<Button
+		class="link-item"
+		on:click={() => showLogs = !showLogs}
+	>
 		<img src="/assets/icons/Chart_fill.svg" alt="Stats widget button"> 
 	</Button>
 	

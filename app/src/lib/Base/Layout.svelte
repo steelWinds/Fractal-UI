@@ -11,19 +11,8 @@
 
 <Header />
 
-<main
-	class="
-		main
-		tw-flex
-		tw-flex-col
-		tw-justify-between
-	"
->
+<main>
 	<slot />
 </main>
 
-<style lang="postcss">
-.main {
-	block-size: calc(100vh - 64px);
-}
-</style>
+<slot name="other-panels" />
